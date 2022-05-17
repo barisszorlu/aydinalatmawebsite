@@ -1,0 +1,55 @@
+<div class="sidebar-content">
+  <a id="appSidebarToggle" class="sidebar-toggle">
+    <i class="menu-icon app-custom app-menu-icon"></i>
+    <span class="text-white text-uppercase">{{ 'PRODUCTS' | translate }}</span>
+  </a>
+  <div class="app-viewport scrollable" id="treeMain">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl"
+      style="background-color: transparent; color: white !important;">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding style="
+      color: white !important;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      padding: 2.5rem 0;
+      color: var(--app-white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      
+      " id="child">
+        <!-- use a disabled button to provide padding for tree leaf -->
+        <!-- <button mat-icon-button disabled></button> -->
+        <!-- <span>{{node.name}}</span>  -->
+        <a class="app-custom app-link" href="/urun-grubu/{{node.id}}" style="border-bottom: unset !important;">
+          {{node.name}}
+        </a>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding style=" 
+      color: white !important;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      padding: 2.5rem 0;
+      color: var(--app-white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      ">
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name" 
+        style="
+        float: right;
+        background-color: transparent;
+        color: unset;
+        border-color: transparent;
+        ">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        <span matTreeNodeToggle>{{node.name}}</span> 
+      </mat-tree-node>
+    </mat-tree>
+
+
+
+  </div>
+
+
+</div>

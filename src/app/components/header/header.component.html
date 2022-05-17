@@ -1,0 +1,92 @@
+<header class="header header-transparent">
+  <div class="sticky-content-wrapper" style="height: 99px">
+    <div
+      #stickyHeader
+      class="header-middle has-center sticky-header fix-top sticky-content app-custom app-sticky-header"
+      (headerload)="onHeaderLoaded()"
+    >
+      <div class="container-fluid">
+        <div class="header-left">
+          <a href="/" class="logo mr-0">
+            <img alt="logo" width="163" height="39" [src]="logoSrc" />
+          </a>
+          <nav class="main-nav" style="margin-left: 3.7rem;">
+            <ul class="menu">
+              <li>
+                <a
+                  [ngClass]="{
+                    'app-black': isHeaderTextBlack,
+                    'app-white': !isHeaderTextBlack
+                  }"
+                  href="/iletisim"
+                  >{{ 'UPPER_CONTRACT' | translate }}</a
+                >
+              </li>
+              <li class="submenu" *ngIf="true">
+                <a *ngIf="idLanguage == '1'"
+                  [ngClass]="{
+                    'app-black': isHeaderTextBlack,
+                    'app-white': !isHeaderTextBlack
+                  }"
+                >
+                  <img 
+                    src="assets/images/flags/tr.png"
+                    alt="TR"
+                    class="dropdown-image"
+                  />TR
+                </a>
+                <a *ngIf="idLanguage == '2'"
+                  [ngClass]="{
+                    'app-black': isHeaderTextBlack,
+                    'app-white': !isHeaderTextBlack
+                  }"
+                >
+                  <img 
+                    src="assets/images/flags/en.png"
+                    alt="EN"
+                    class="dropdown-image"
+                  />EN
+                </a>
+                <ul class="app-language-menu">
+                  <li (click)="changeLanguage(2)" style="cursor: pointer;">
+                    <a
+                      class="app-custom app-sublink"
+                      [ngClass]="{
+                        'app-black': isHeaderTextBlack,
+                        'app-white': !isHeaderTextBlack
+                      }"
+                      
+                    >
+                      <img
+                        src="assets/images/flags/en.png"
+                        alt="EN"
+                        class="dropdown-image"
+                      />EN
+                    </a>
+                  </li>
+                  <li (click)="changeLanguage(1)" style="cursor: pointer;">
+                    <a
+                      class="app-custom app-sublink"
+                      [ngClass]="{
+                        'app-black': isHeaderTextBlack,
+                        'app-white': !isHeaderTextBlack
+                      }"
+                    >
+                      <img
+                        src="assets/images/flags/tr.png"
+                        alt="TR"
+                        class="dropdown-image"
+                      />TR
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-center" [ngStyle]="{ flex: 1 }"></div>
+        <div class="header-right"></div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,41 @@
+.app-custom.app-text {
+    color: #8E8E8E;
+    font-size: 17px;
+  }
+  
+  .app-page-header {
+    padding-top: 8rem;
+  
+    > .page-header {    
+      min-height: 305px;
+    }
+  }
+  
+  .app-custom.app-video {
+    height: 100%;
+    min-height: 178px;
+  }
+  
+  .app-custom.app-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .app-image-container {
+    display: flex;
+    
+    figure {
+      width: 100%;
+    }
+    
+    &.afirst {
+      margin-bottom: 0.25em;
+    }
+  
+    &.asecond {
+      margin-top: 0.25em;
+    }
+  }
+  img{
+    filter: grayscale(100%) !important;
+  }

@@ -1,0 +1,72 @@
+.app-list {
+  list-style: none;
+}
+
+.app-mr {
+  margin-right: 40px;
+}
+
+.app-row-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  > h4 {
+    color: var(--app-dark-grey);
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}
+
+.app-mb:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.app-btn-container {
+  display: flex;
+  max-height: 36px;
+
+  > a.btn.btn-outline {
+    font-size: 10px;
+
+    > i {
+      margin-right: 10px;
+    }
+  }
+
+  > a.btn.btn-outline:hover {
+    border-color: var(--app-green);
+    background-color: var(--app-green);
+  }
+
+  .app-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+
+    > i {
+      margin-left: 0;
+    }
+  }
+}
+
+.app-divider {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1.4rem;
+  height: 1px;
+  width: 100%;
+  background-color: #e1e1e1;
+}
+
+i.fas {
+  min-width: 18px;
+  text-align: center;
+}
+
+.fas.fa-certificate {
+  font-weight: 900;
+}

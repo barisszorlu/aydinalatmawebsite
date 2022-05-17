@@ -1,0 +1,58 @@
+.app-custom.app-product-name {
+  color: var(--app-green);
+  margin-bottom: 2rem;
+}
+
+.app-custom.app-product-form {
+  margin-bottom: 2px;
+  line-height: 2rem;
+}
+
+.app-custom.app-list {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 1.86;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+
+  li > label {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    list-style-type: none;
+    display: inline-block;
+    min-width: 12rem;
+    color: #222;
+    text-transform: unset;
+  }
+
+  li > p {
+    color: #666;
+    list-style-type: none;
+    font-weight: 400;
+    margin: 0 0 2rem;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+.app-custom.app-catalog-image {
+  border-radius: unset;
+}
+
+.app-custom.app-catalog-container {
+  align-items: center;
+  // background-color: var(--app-light-grey);
+  padding: 0.6rem;
+}
+
+h4 {
+  font-size: 14px;
+  color: #797777;
+  margin-bottom: 0.5rem;
+}

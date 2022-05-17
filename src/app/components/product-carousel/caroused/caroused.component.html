@@ -1,0 +1,37 @@
+<!-- <figure class="product-image" *ngIf="!isVideo">
+  <img
+    class="app-border-radius"
+    alt="Ürün"
+    width="800"
+    height="900"
+    [src]="contentSrc"
+    [attr.data-zoom-image]="imgZoomSrc"
+  />
+  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+</figure>
+<figure class="product-video" *ngIf="isVideo">
+  <ng-container>
+    <iframe
+      id="appProductCarouselVideo"
+      class="app-border-radius app-video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      width="100%"
+      height="100%"
+      [src]="safeSrc"
+    ></iframe>
+  </ng-container>
+</figure> -->
+
+<figure class="product-image" *ngFor="let item of medias">
+  <img
+    class="app-border-radius"
+    alt="Ürün"
+    width="800"
+    height="900"
+    [attr.src]="item.media"
+    [attr.data-zoom-image]="item.media"
+  />
+  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+</figure>

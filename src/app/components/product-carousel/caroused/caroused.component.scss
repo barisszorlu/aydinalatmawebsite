@@ -1,0 +1,31 @@
+.app-video {
+  min-height: 251px;
+
+  @media (min-width: 375px) {
+    min-height: 306px;    
+  }
+
+  @media (min-width: 411px) {    
+    min-height: 342px;
+  }
+
+  @media (min-width: 414px) {    
+    min-height: 345px;
+  }
+
+  @media (min-width: 768px) {    
+    min-height: 334px;
+  }
+
+  @media (min-width: 1440px) {    
+    min-height: 489px;
+  }
+
+  @media (min-width: 1920px) {    
+    min-height: 503px;
+  }
+
+  @media (min-width: 2560px) {    
+    min-height: 503px;
+  }
+}

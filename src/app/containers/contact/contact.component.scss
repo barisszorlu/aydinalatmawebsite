@@ -1,0 +1,42 @@
+.app-header {
+  color: #2e2e44;
+}
+
+.app-page-header {
+  padding-top: 8rem;
+
+  > .page-header {    
+    min-height: 305px;
+  }
+}
+
+.app-contact-section {
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.app-contact-input {
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.app-contact-send {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+}
+
+.btn.btn-outline.app-contact-send:hover {
+  background-color: var(--app-green);
+  border-color: var(--app-green);
+}
+
+.social-links {
+  .social-link.social-linkedin,
+  .social-link.social-twitter,
+  .social-link.social-facebook {
+    &:hover {
+      background-color: var(--app-blue);
+      border-color: var(--app-blue);
+    }
+  }
+}

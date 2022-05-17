@@ -1,0 +1,72 @@
+<main class="main">
+    <div class="container app-page-header">
+        <div
+          class="page-header"
+          style="background-image: url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80)"
+        >
+          <h1 class="page-title"></h1>
+        </div>
+      </div>
+      <div class="page-content mt-10 pt-7">
+        <section class="about-section">
+          <div class="container">
+            <h2 class="title mb-lg-9">3N KARİYER</h2>
+            <div class="row mb-10">
+              <div class="col-md-6 pt-md-5">
+                <p class="text-uppercase text-grey mb-0" style="font-weight: bold;" *ngIf="false">
+                  BİZ KİMİZ?
+                </p>
+                <h5 class="lh-1 ls-m"></h5>
+                <p class="mb-8 app-custom app-text">
+                    3N Aydınlatma Şirketimizdeki Güncel İş İlanlarımız İçin; <br>
+                    <a href="https://www.kariyer.net/firma-profil/3n-aydinlatma-enerji-proje-ve-danismanlik-san-tic-145873-70134" target="_blank" style="cursor: pointer !important;"><strong>Kariyer.net</strong></a> ya da 
+                    <a href="https://www.yenibiris.com/firma/3-n-aydinlatma/271337" target="_blank" style="cursor: pointer !important;"><strong>yenibiriş.com</strong></a>
+                    platformlarımızı inceleyebilir ya da <strong>insankaynaklari@3naydinlatma.com.tr</strong> 
+                    mail adresimize özgeçmişlerinizi gönderebilirsiniz.
+                </p>
+              </div>
+              <div class="col-md-6 pt-md-5">
+                <form class="ml-lg-2 pb-10 pl-4 pr-4 pl-lg-6 pr-lg-6 app-contact-section" action="#">
+                  <!-- <h3 class="ls-m mb-1">CV Gönderin</h3> -->
+                  <p class="text-grey">Cv'nizi formdan gönderebilirsiniz.</p>
+                  <div class="row">
+                    <div class="col-12 mb-4">
+                      <input class="form-control app-contact-input" type="text" placeholder="Telefon *" name="phone"
+                        required [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
+                    </div>
+                    <div class="col-12 mb-4">
+                      <input class="form-control app-contact-input" type="email" placeholder="E-posta *" name="email"
+                        required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"/>
+                    </div>
+                    <div class="col-12 mb-4">
+                      <input class="form-control app-contact-input" type="file" name="file"
+                        [(ngModel)]="user.file"  (change)="FileChange($event)" [ngModelOptions]="{standalone: true}"/>
+                    </div>                    
+                  </div>
+                  <button class="btn btn-outline app-contact-send" (click)="onSend()" *ngIf="showSendButton">Gönder</button>
+                </form>
+              </div>
+              <div class="col-md-6 pt-md-5" *ngIf="false">
+                <p class="text-uppercase text-grey mb-0"><br /></p>
+                <h5 class="lh-1 ls-m"></h5>
+                <p class="app-custom app-text">
+                  Perakende, finans, otomotiv, lojistik gibi alanlarda
+                  gerçekleştirdiğimiz başarılı projelerin odağında müşterilerimizin
+                  ihtiyaç ve beklentilerini karşılamaya yönelik iş anlayışımız yer
+                  almaktadır. Uluslararası firmalarla sürdürdüğümüz işbirlikleri ile
+                  yolumuza devam ederken Türkiye'nin yanı sıra birçok ülkede, dünya
+                  standartlarında faaliyetlerimizi sürdürmekteyiz.
+                </p>
+                <p class="mb-8 app-custom app-text">
+                  Üstün teknoloji, yüksek kalite ve dinamik bir insan kaynağını
+                  sektörümüzün kullanımına sunmaktayız. Enerji kullanımını
+                  kaynakların verimli kullanılması ilkesi ile yönettiğimiz
+                  çalışmalarımızda, müşteri ihtiyaç ve beklentilerini tasarruflu
+                  ürün ve ekipmanlarla karşılamaya önem vermekteyiz.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+</main>

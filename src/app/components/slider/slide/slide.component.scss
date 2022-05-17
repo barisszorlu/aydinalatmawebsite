@@ -1,0 +1,17 @@
+a.app-custom.app-link {
+  border-color: var(--app-white);
+}
+
+a.app-custom.app-link:hover {
+  background-color: var(--app-green);
+  border-color: var(--app-green);
+}
+
+.app-custom.app-highlight {
+  background-color: var(--app-green);
+  min-height: 48px;
+  font-size: 1em;
+  line-height: 1;
+  padding: 0.325rem 0.75rem;
+  color: var(--app-white);
+}

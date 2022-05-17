@@ -1,0 +1,144 @@
+<main class="main">
+  <div class="container app-page-header">
+    <div class="page-header" style="background-image: url(assets/images/contact/contact_banner.jpg)">
+      <h1 class="page-title"></h1>
+    </div>
+  </div>
+  <div class="page-content mt-10 pt-4">
+    <section class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-xs-5 ls-m pt-3">
+            <h2 class="font-weight-bold text-uppercase ls-m mb-2 app-header">
+              {{ 'UPPER_CONTRACT' | translate }}
+            </h2>
+            <p style="font-size: 13px; padding-bottom: 0; margin-bottom: 0">
+              3N Aydınlatma Enerji Proje ve Danışmanlık<br />
+              San. Tic. Ltd Şti.
+            </p>
+            <p style="font-size: 13px"></p>
+            <h4 class="mb-1 text-uppercase app-header"> {{ 'CENTRE' | translate }}</h4>
+            <p>
+              Ziya Gökalp Mahallesi, Atatürk Blv. No:42, 34490 İkitelli
+              Osb/Başakşehir/İstanbul
+            </p>
+            <!-- <h4 class="mb-1 text-uppercase app-header">TELEFON</h4> -->
+            <p style="margin: 0">
+              <a href="tel:+902124383223">{{ 'PHO' | translate }}: +90 212 438 32 23</a>
+            </p>
+            <p style="margin: 0">
+              <a href="fax:+902124383224">Fax: +90 212 438 32 24</a>
+            </p>
+            <!-- <h4 class="mb-1 text-uppercase">E-POSTA</h4> -->
+            <p>
+              <a href="mailto:info@3naydinlatma.com.tr">info@3naydinlatma.com.tr</a>
+            </p>
+            <h4 class="mb-1 text-uppercase app-header">{{ 'FACTORY' | translate }} </h4>
+            <p>
+              İOSB MH Eski Turgut Özal Cd Altıntaç İş Mrk. A Blok No 601 Başakşehir-İstanbul
+            </p>
+            <!-- <h4 class="mb-1 text-uppercase app-header">TELEFON</h4> -->
+            <p style="margin: 0">
+              <a href="tel:+902124383223">{{ 'PHO' | translate }}: +90 212 438 32 23</a>
+            </p>
+            <p style="margin: 0">
+              <a href="fax:+902124383224">Fax: +90 212 438 32 24</a>
+            </p>
+            <!-- <h4 class="mb-1 text-uppercase">E-POSTA</h4> -->
+            <p style="margin: 0">
+              <a href="mailto:info@3naydinlatma.com.tr">info@3naydinlatma.com.tr</a>
+            </p>
+          </div>
+          <div class="col-lg-9 col-md-8 col-xs-7">
+            <form class="ml-lg-2 pt-8 pb-10 pl-4 pr-4 pl-lg-6 pr-lg-6 app-contact-section" action="#">
+              <h3 class="ls-m mb-1">{{ 'CONTACT_US' | translate }}</h3>
+              <p class="text-grey">{{ 'EMAIL_PUBLISH_INFO' | translate }}</p>
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <input class="form-control app-contact-input" type="text" placeholder="{{ 'YOUR_FIRM' | translate }} *" name="company"
+                    required [(ngModel)]="user.firmName"  [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col-12 mb-4">
+                  <input class="form-control app-contact-input" type="text" placeholder="{{ 'NAME_SURNAME' | translate }} *" name="name"
+                    required [(ngModel)]="user.nameSurname" [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col-12 mb-4">
+                  <input class="form-control app-contact-input" type="text" placeholder="{{ 'PHONE' | translate }} *" name="phone"
+                    required [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col-12 mb-4">
+                  <input class="form-control app-contact-input" type="email" placeholder="{{ 'EMAIL' | translate }} *" name="email"
+                    required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col-12 mb-4">   
+                  <label for="subject">{{ 'SUBJECT' | translate }}:</label>
+                  <select id="subject" name="subject" class="form-control app-contact-input" (change)="changeSubject($event.target)">
+                    <option *ngFor="let item of subjectList" value="{{item.id}}"  [(ngModel)]="user.idSubject" [ngModelOptions]="{standalone: true}">{{item.name}}</option>
+                  </select>
+                </div>
+                <div class="col-12 mb-4" *ngIf="showCv">
+                  <input class="form-control app-contact-input" type="file" name="file"
+                    [(ngModel)]="user.file"  (change)="FileChange($event)" [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col-12 mb-4">
+                  <textarea class="form-control app-contact-input" required placeholder="{{ 'MESSAGE' | translate }} *" name="message"
+                    [(ngModel)]="user.message"></textarea>
+                </div>
+                
+              </div>
+              <button class="btn btn-outline app-contact-send" (click)="onSend()" *ngIf="showSendButton">{{ 'SEND' | translate }}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section-->
+
+    <section class="store-section pt-10 pb-10" >
+      <div class="container"*ngIf="false">
+        <h2 class="title mt-2">SATIŞ</h2>
+        <div class="row cols-sm-2 cols-lg-4" style="justify-content: center">
+          <div class="store">
+            <figure>
+              <img src="assets/images/placeholder.png" alt="store" width="280" height="280" />
+              <h4 class="overlay-visible">YURTİÇİ</h4>
+              <div class="overlay overlay-transparent">
+                <a class="mt-8" href="mail:info@3naydinlatma.com.tr">info@3naydinlatma.com.tr</a>
+                <a href="tel:+902124383223">Tel: +90 212 438 32 23</a>
+                <div class="social-links mt-1">
+                  <a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
+                  <a href="#" class="social-link social-twitter fab fa-twitter"></a>
+                  <a href="#" class="social-link social-linkedin fab fa-linkedin-in"></a>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="store">
+            <figure>
+              <img src="assets/images/placeholder.png" alt="store" width="280" height="280" />
+              <h4 class="overlay-visible">Uluslararası</h4>
+              <div class="overlay overlay-transparent">
+                <a class="mt-8" href="mail:info@3naydinlatma.com.tr">info@3naydinlatma.com.tr</a>
+                <a href="tel:+902124383223">Tel: +90 212 438 32 23</a>
+                <div class="social-links mt-1">
+                  <a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
+                  <a href="#" class="social-link social-twitter fab fa-twitter"></a>
+                  <a href="#" class="social-link social-linkedin fab fa-linkedin-in"></a>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Store Section -->
+
+    <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+    <div class="grey-section mb-6" id="googlemaps" style="height: 386px">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.0476996776943!2d28.808820616299545!3d41.067949979294774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa5235b8a8ad1%3A0xb78f2f9e03e6c1c1!2s3N%20Ayd%C4%B1nlatma!5e0!3m2!1sen!2str!4v1616923076027!5m2!1sen!2str"
+        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- End Map Section -->
+  </div>
+</main>

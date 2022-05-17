@@ -1,0 +1,22 @@
+* {
+  color: #000;
+}
+
+.app-custom.app-email {
+  background-color: #f0eeee;
+}
+
+.app-custom.app-join {
+  background-color: var(--app-green);
+  border-color: var(--app-green);
+  color: var(--app-white);
+}
+
+.app-custom.app-banner-newsletter {
+  border: unset;
+}
+
+.app-custom.app-banner-content {
+  flex-wrap: wrap;
+  place-content: center;
+}

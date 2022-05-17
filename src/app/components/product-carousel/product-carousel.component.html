@@ -1,0 +1,52 @@
+<div class="product-gallery">
+  <!-- <div id="appProductCarouselNavContainer"
+    class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1 app-product-carousel-nav">
+    <app-caroused contentSrc="TwMUdHox-dI" imgZoomSrc="assets/images/product/example1.jpeg" [isVideo]="true">
+    </app-caroused>
+    <app-caroused contentSrc="assets/images/product/example1.jpeg" imgZoomSrc="assets/images/product/example1.jpeg">
+    </app-caroused>
+    <app-caroused contentSrc="assets/images/product/example2.jpeg" imgZoomSrc="assets/images/product/example2.jpeg">
+    </app-caroused>
+    <app-caroused contentSrc="assets/images/product/example3.jpeg" imgZoomSrc="assets/images/product/example3.jpeg">
+    </app-caroused>
+  </div> -->
+
+  <div id="appProductCarouselNavContainer"
+    class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1 app-product-carousel-nav"
+    >
+    <!-- *ngFor="let item of medias; let i = index" -->
+    <app-caroused [medias]="medias">
+    </app-caroused>
+    
+  </div> 
+  <div class="product-thumbs-wrap">
+    <div class="product-thumbs">
+      <div *ngFor="let item of medias; let i = index" [ngClass]="{'product-thumb active': i==0, 'product-thumb': i!=0}">
+        <img class="app-border-radius"  [attr.src]="item.media" alt="product thumbnail" width="109"
+        height="122" />
+      </div>
+      <!-- <div class="product-thumb active">
+        <img class="app-border-radius" src="assets/images/product/example1.jpeg" alt="product thumbnail" width="109"
+          height="122" />
+      </div>
+      <div class="product-thumb">
+        <img class="app-border-radius" src="assets/images/product/example1.jpeg" alt="product thumbnail" width="109"
+          height="122" />
+      </div>
+      <div class="product-thumb">
+        <img class="app-border-radius" src="assets/images/product/example2.jpeg" alt="product thumbnail" width="109"
+          height="122" />
+      </div>
+      <div class="product-thumb">
+        <img class="app-border-radius" src="assets/images/product/example3.jpeg" alt="product thumbnail" width="109"
+          height="122" />
+      </div> -->
+    </div>
+    <button class="thumb-up disabled">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="thumb-down disabled">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

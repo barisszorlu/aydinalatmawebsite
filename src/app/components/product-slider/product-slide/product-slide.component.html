@@ -1,0 +1,20 @@
+<div class="product product-classic app-custom app-classic">
+  <figure class="product-media">
+    <a [href]="productHref">
+      <img class="app-border-radius" alt="product" width="280" height="315" [src]="imageSrc"
+        style="padding: 10% !important" />
+    </a>
+  </figure>
+  <div class="product-details">
+    <div class="product-cat">
+      <a class="app-custom app-text" [href]="categoryHref">{{ category }}</a>
+    </div>
+    <h3 class="product-name app-custom app-product-name">
+      <a class="app-custom app-text" [href]="productHref">{{ name }}</a>
+    </h3>
+    <div class="product-action">
+      <a class="btn app-custom app-button app-border-radius" title="{{ 'REVIEW_PRODUCT | translate' }}"
+        [href]="productHref">{{ 'REVIEW_PRODUCT' | translate }}</a>
+    </div>
+  </div>
+</div>

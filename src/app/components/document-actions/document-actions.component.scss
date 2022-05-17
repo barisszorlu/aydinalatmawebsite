@@ -1,0 +1,33 @@
+.app-custom.app-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  > .app-divider {
+    margin: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    > .app-divider {
+      margin: 0.5rem;
+    }
+  }
+}
+
+.app-custom.app-btn-outline {
+  > i {
+    margin-left: 0;
+  }
+}
+
+.app-custom.app-btn-outline:hover {
+  border-color: var(--app-green);
+  background-color: var(--app-green);
+}
+
+.app-custom.app-mr {
+  margin-right: 10px;
+}

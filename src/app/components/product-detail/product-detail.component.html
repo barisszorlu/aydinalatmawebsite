@@ -1,0 +1,43 @@
+<div class="product-details">
+  <div class="product-navigation">
+    <ul class="breadcrumb breadcrumb-lg">
+      <li>
+        <a href="/"><i class="d-icon-home"></i></a>
+      </li>
+      <li>
+        <a [href]="'urun-grubu/'+ product?.idProductGroup" class="active">{{ 'PRODUCTS_DOWN' | translate }}</a>
+      </li>
+      <li><a [href]="'urun-grubu/'+ product?.idProductGroup">{{ product?.productGroupName }}</a></li>
+    </ul>
+  </div>
+  <h1 class="product-name app-custom app-product-name">
+    {{ product?.name }}
+  </h1>
+  <h4>{{ 'PRODUCT_DESC' | translate }}</h4>
+  <p class="product-short-desc">
+    {{ product?.desc }}
+  </p>
+  <h4>{{ 'PRODUCT_FEATURES' | translate }}</h4>
+  <ul class="list-none app-custom app-list">
+    <li *ngFor="let item of product?.productFeatureDetails">
+      <label>{{item.prodcutFeatureName}}</label>
+      <p>{{item.value}}</p>
+    </li>
+  </ul>
+  <div class="comment app-custom app-catalog-container" *ngIf="showBrochure">
+    <figure class="comment-media app-custom app-catalog-image">
+      <a>
+        <img [attr.src]="this.product?.brochureFile" />
+      </a>
+    </figure>
+    <div class="comment-body">
+      <div class="comment-user">
+        <h4>{{ 'PRODUCT_BROCHURE' | translate }}</h4>
+      </div>
+      <div class="comment-content">
+        <p>{{ 'PRODUCT_DETAIL_INFO' | translate }}</p>
+        <app-document-actions [brochure]="brochure"></app-document-actions>
+      </div>
+    </div>
+  </div>
+</div>

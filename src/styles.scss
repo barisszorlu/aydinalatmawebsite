@@ -1,0 +1,131 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$three-n-primary: mat-palette($mat-indigo);
+$three-n-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$three-n-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$three-n-theme: mat-light-theme(
+  (
+    color: (
+      primary: $three-n-primary,
+      accent: $three-n-accent,
+      warn: $three-n-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($three-n-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --app-black: #000000;
+  --app-green: #009f4b;
+  --app-blue: #0c4ea2;
+  --app-white: #ffffff;
+  --app-grey: #898c8b;
+  --app-light-grey: #ededed;
+  --app-dark-grey: #666666;
+}
+
+@import "assets/fonts/nexa/stylesheet.css";
+
+// Add margin because of left side bar
+.page-wrapper.app-custom.app-page-wrapper,
+.app-custom.app-panel {
+  margin-left: 59px;
+}
+
+.sidebar-active .page-wrapper.app-custom.app-page-wrapper,
+.sidebar-active .app-custom.app-panel {
+  margin-left: 33.9rem;
+  margin-right: -33.9rem;
+}
+
+.sidebar-active
+  .header-middle.has-center.sticky-header.fix-top.sticky-content.app-custom.app-sticky-header.fixed {
+  left: 33.9rem;
+  right: -33.9rem;
+}
+
+.app-custom.app-panel {
+  .mat-dialog-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .sidebar-active .page-wrapper.app-custom.app-page-wrapper,
+  .sidebar-active .app-custom.app-panel {
+    margin-left: 34rem;
+    margin-right: -34rem;
+  }
+
+  .sidebar-active
+    .header-middle.has-center.sticky-header.fix-top.sticky-content.app-custom.app-sticky-header.fixed {
+    left: 34rem;
+    right: -34rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-wrapper.app-custom.app-page-wrapper,
+  .app-custom.app-panel {
+    margin-left: 3.9rem;
+  }
+
+  .sidebar-active .page-wrapper.app-custom.app-page-wrapper,
+  .sidebar-active .app-custom.app-panel {
+    margin-left: 34rem;
+    margin-right: -34rem;
+  }
+
+  .sidebar-active
+    .header-middle.has-center.sticky-header.fix-top.sticky-content.app-custom.app-sticky-header.fixed {
+    left: 34rem;
+    right: -34rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .sidebar-active .page-wrapper.app-custom.app-page-wrapper,
+  .sidebar-active .app-custom.app-panel {
+    margin-left: 30rem;
+    margin-right: -30rem;
+  }
+
+  .sidebar-active
+    .header-middle.has-center.sticky-header.fix-top.sticky-content.app-custom.app-sticky-header.fixed {
+    left: 30rem;
+    right: -30rem;
+  }
+}
+
+.app-border-radius {
+  border-radius: 5px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*:not(.social-link,.mat-icon,i){
+  font-family: 'nexa' !important;
+}
+

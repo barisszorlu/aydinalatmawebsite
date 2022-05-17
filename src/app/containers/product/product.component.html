@@ -1,0 +1,208 @@
+<main class="main app-custom app-product-page">
+  <div class="page-content">
+    <div class="container">
+      <div class="row gutter-lg app-custom app-row">
+        <div class="col-lg-9">
+          <div class="product product-single row mb-4">
+            <div class="col-md-6">
+              <!-- <carousel [images]="images" [cellsToShow]="1" [loop]="true" [autoplay]="true" [autoplayInterval]="3000" [height]="500">
+              </carousel> -->
+              <!-- https://stackblitz.com/edit/ng-responsive-carousel-scmash?file=src%2Fapp%2Fapp.component.ts -->
+              <!-- Berkayınki zoom ve alt barı da ekle <app-product-carousel [medias]="medias" *ngIf="showSlider"></app-product-carousel> -->
+              <!-- <app-carousel [items]="medias"></app-carousel> -->
+              <div class="product-gallery">
+                <div id="appProductCarouselNavContainer"
+                class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1 app-product-carousel-nav"
+                >
+                <figure class="product-image" *ngIf="medias[0]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[0]?.media"
+                    [attr.data-zoom-image]="medias[0]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>
+                <figure class="product-image" *ngIf="medias[1]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[1]?.media"
+                    [attr.data-zoom-image]="medias[1]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>
+                <figure class="product-image" *ngIf="medias[2]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[2]?.media"
+                    [attr.data-zoom-image]="medias[2]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>
+                <figure class="product-image" *ngIf="medias[3]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[3]?.media"
+                    [attr.data-zoom-image]="medias[3]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>     
+                <figure class="product-image" *ngIf="medias[4]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[4]?.media"
+                    [attr.data-zoom-image]="medias[4]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>     
+                <figure class="product-image" *ngIf="medias[5]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[5]?.media"
+                    [attr.data-zoom-image]="medias[5]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>      
+                <figure class="product-image" *ngIf="medias[6]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[6]?.media"
+                    [attr.data-zoom-image]="medias[6]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>  
+                <figure class="product-image" *ngIf="medias[7]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[7]?.media"
+                    [attr.data-zoom-image]="medias[7]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>   
+                <figure class="product-image" *ngIf="medias[8]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[8]?.media"
+                    [attr.data-zoom-image]="medias[8]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>    
+                <figure class="product-image" *ngIf="medias[9]?.media">
+                  <img
+                    class="app-border-radius"
+                    alt="Ürün"
+                    width="800"
+                    height="900"
+                    [attr.src]="medias[9]?.media"
+                    [attr.data-zoom-image]="medias[9]?.media"
+                  />
+                  <a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>
+                </figure>                              
+              </div> 
+                <div class="product-thumbs-wrap">
+                  <div class="product-thumbs">
+                    <!-- <div *ngFor="let item of medias; let i = index" [ngClass]="{'product-thumb active': i==0, 'product-thumb': i!=0}">
+                      <img class="app-border-radius"  [attr.src]="item.media" alt="product thumbnail" width="109"
+                      height="122" />
+                    </div> -->
+                    <div class="product-thumb active" *ngIf="medias[0]?.media">
+                      <img class="app-border-radius" src="{{medias[0]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[1]?.media">
+                      <img class="app-border-radius" src="{{medias[1]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[2]?.media">
+                      <img class="app-border-radius" src="{{medias[2]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[3]?.media">
+                      <img class="app-border-radius" src="{{medias[3]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[4]?.media">
+                      <img class="app-border-radius" src="{{medias[4]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[5]?.media">
+                      <img class="app-border-radius" src="{{medias[5]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[6]?.media">
+                      <img class="app-border-radius" src="{{medias[6]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[7]?.media">
+                      <img class="app-border-radius" src="{{medias[7]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[8]?.media">
+                      <img class="app-border-radius" src="{{medias[8]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                    <div class="product-thumb" *ngIf="medias[9]?.media">
+                      <img class="app-border-radius" src="{{medias[9]?.media}}" alt="product thumbnail" width="109"
+                        height="122" />
+                    </div>
+                  </div>
+                  <button class="thumb-up disabled">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="thumb-down disabled">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <app-product-detail [product]="productData"></app-product-detail>
+            </div>
+          </div>
+
+          <div>
+            <app-product-table></app-product-table>
+          </div>
+
+          <section class="app-custom app-section">
+            <app-accordion [contents]="accordionContents"></app-accordion>
+          </section>
+
+          <!-- <section class="app-custom app-section">
+            <h2 class="title title-link mb-4">
+              {{ productTypeName }}
+            </h2>
+
+            <app-product-slider [products]="products"></app-product-slider>
+          </section> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

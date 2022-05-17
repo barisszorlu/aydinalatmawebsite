@@ -1,0 +1,15 @@
+.app-custom.app-product-page {
+  padding-top: 99px;
+}
+
+.app-custom.app-row {
+  justify-content: center;
+}
+
+.app-custom.app-section {
+  margin-bottom: 30px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,46 @@
+<section
+  class="intro-slider animation-slider owl-carousel owl-dot-inner owl-demo-dot owl-theme row cols-1 gutter-no"
+  data-owl-options="{
+    'items': 1,
+    'dots': true,
+    'loop': true,
+    'nav': false,
+    'animateOut': 'grayOut'
+  }"
+>
+<!-- Tr -->
+  <app-slide *ngIf="idLanguage == '1'"
+    image="assets/images/bg2.png"
+    title="CLOVE"
+    subtitle="{{ 'S1H1' | translate }}"
+    highlight="{{ 'S1H2' | translate }}"
+    paragraph="{{ 'S1H3' | translate }}"
+    href="urun-grubu/7"
+  ></app-slide>
+  <app-slide *ngIf="idLanguage == '1'"
+    image="assets/images/bg1.png"
+    title="LOTUS"
+    subtitle="ŞIK TASARIMA SAHİP"
+    highlight="GENİŞ ALANLARI"
+    paragraph="AYDINLATMAYA DEVAM EDİYOR"
+    href="urun-grubu/8"
+  ></app-slide>
+<!-- En -->
+<app-slide *ngIf="idLanguage == '2'"
+image="assets/images/bg2.png"
+title="CLOVE"
+subtitle="{{ 'S1H1' | translate }}"
+highlight="{{ 'S1H2' | translate }}"
+paragraph="{{ 'S1H3' | translate }}"
+href="urun-grubu/69"
+></app-slide>
+<app-slide *ngIf="idLanguage == '2'"
+image="assets/images/bg1.png"
+title="LOTUS"
+subtitle="{{ 'S2H1' | translate }}"
+highlight="{{ 'S2H2' | translate }}"
+paragraph="{{ 'S2H3' | translate }}"
+href="urun-grubu/62"
+></app-slide>
+
+</section>

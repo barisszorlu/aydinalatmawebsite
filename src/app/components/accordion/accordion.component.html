@@ -1,0 +1,36 @@
+<div
+  class="accordion accordion-background accordion-icon accordion-boxed accordion-card-border accordion-plus accordion-gutter-sm"
+>
+  <div class="card app-border-radius" *ngFor="let content of contents; let i = index">
+    <div class="card-header">
+      <a class="expand" [href]="'#accordion' + i">
+        <i [class]="content.iconClass"></i>
+        {{ content.title }}
+      </a>
+    </div>
+    <div class="collapsed" [id]="'accordion' + i">
+      <div class="card-body">
+        <ul class="app-list">
+          <ng-container *ngFor="let item of content.items; let j = index">
+            <li class="app-mb">
+              <div class="app-row-container">
+                <h4>{{ item.title }}</h4>
+                <div class="app-btn-container">
+                  <a href="{{item.href}}" target="_blank" class="btn btn-outline app-mr app-btn app-border-radius">
+                    <i class="far fa-eye"></i>{{ 'BROWSE' | translate }}
+                  </a>
+                  <!-- <a href="#" class="btn btn-outline app-btn app-border-radius">
+                    <i class="fas fa-download"></i>İNDİR
+                  </a> -->
+                </div>
+              </div>
+            </li>
+            <li class="app-mb" *ngIf="j !== (content.items.length - 1)">
+              <div class="app-divider"></div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

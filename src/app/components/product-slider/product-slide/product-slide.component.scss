@@ -1,0 +1,46 @@
+a.app-custom.app-text:hover {
+  color: var(--app-green);
+}
+
+div.product-classic.app-custom.app-classic:hover .product-details a.btn-cart.app-custom.app-button {
+  background-color: var(--app-green);
+}
+
+.app-custom.app-button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--app-white);
+  border-color: var(--app-grey);
+  color: var(--app-grey);
+  transition-property: opacity, background-color, border-color, color;
+  transition-duration: 0.3s;
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 0.4em 0.8em;
+    width: 100%;
+  }
+}
+
+.product-classic:hover .app-custom.app-button {
+  opacity: 0.8;
+  background-color: var(--app-green);
+  border-color: var(--app-green);
+  color: var(--app-white);
+}
+
+.product-classic:hover .app-custom.app-button:hover,
+.app-custom.app-button:hover {
+  opacity: 1;
+  background-color: var(--app-green);
+  border-color: var(--app-green);
+  color: var(--app-white);
+}
+
+.app-custom.app-product-name {
+  @media (max-width: 768px) {
+    padding-right: 2px;
+  }
+}
