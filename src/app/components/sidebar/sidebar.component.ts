@@ -93,7 +93,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   public subCategories : Array<any>;
   constructor(private httpClient:HttpClient,private router: Router,private translate: TranslateService) {
     var idLanguage = localStorage.getItem('idLanguage');
-    switch (idLanguage.toString()) {
+    switch (idLanguage?.toString()) {
       case '1':
         this.translate.use('tr');
         break;

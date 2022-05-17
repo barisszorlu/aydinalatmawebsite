@@ -9804,7 +9804,7 @@ aside + div .product-single .product-details {
   .header .main-nav,
   .header .divider,
   .header .login {
-    display: none;
+    /* display: none; */
   }
   .header-top .header-left {
     margin-right: 2rem;

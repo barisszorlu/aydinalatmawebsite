@@ -110,8 +110,8 @@ export class ContactComponent implements OnInit {
       this.showCv = false;
       this.user.file = null;
     }
-    this.user.sendToMails = this.subjectList.find(x=>x.id.toString() ==  changeSubject.value).mails;
-    this.user.subject = this.subjectList.find(x=>x.id.toString() ==  changeSubject.value).name;
+    this.user.sendToMails = this.subjectList.find(x=>x.id?.toString() ==  changeSubject.value).mails;
+    this.user.subject = this.subjectList.find(x=>x.id?.toString() ==  changeSubject.value).name;
   }
 
   FileChange(evt: any) {

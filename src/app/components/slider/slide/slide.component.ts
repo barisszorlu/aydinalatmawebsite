@@ -16,7 +16,8 @@ export class SlideComponent implements OnInit {
 
   constructor(private translate: TranslateService) {
     var idLanguage = localStorage.getItem('idLanguage');
-    switch (idLanguage.toString()) {
+    
+    switch (idLanguage?.toString()) {
       case '1':
         this.translate.use('tr');
         break;

@@ -22,7 +22,11 @@ export class HeaderComponent implements OnInit {
   idLanguage = '1';
 
   constructor(private readonly router: Router, private translate: TranslateService) {
-    this.idLanguage = localStorage.getItem('idLanguage');
+    var lsIdl = localStorage.getItem('idLanguage');
+    if ( lsIdl != null ) {
+      this.idLanguage = lsIdl;
+    }
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -38,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   changeLanguage(idLanguage: number) {
     localStorage.setItem('idLanguage', idLanguage.toString());
-    switch (idLanguage.toString()) {
+    switch (idLanguage?.toString()) {
       case '1':
         this.translate.use('tr');
         break;

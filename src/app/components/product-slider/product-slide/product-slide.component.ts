@@ -21,7 +21,7 @@ export class ProductSlideComponent implements OnInit {
     private readonly route: ActivatedRoute, private translate: TranslateService
   ) {
     var idLanguage = localStorage.getItem('idLanguage');
-    switch (idLanguage.toString()) {
+    switch (idLanguage?.toString()) {
       case '1':
         this.translate.use('tr');
         break;
@@ -41,7 +41,7 @@ export class ProductSlideComponent implements OnInit {
     this.category = this.productTypeName;
     this.name = this.product.productName;
     this.categoryHref = '/urun-grubu/' + this.route.snapshot.params.id;
-    debugger;
+
     this.productHref ='urun-grubu/' + this.productTypeName.replace(/Ü/gim, "u")
 		.replace(/Ş/gim, "s")
 		.replace(/I/gim, "i")

@@ -57,7 +57,7 @@ export class ProductComponent implements OnInit {
   ) {
    this.httpClient.get<any>(environment.APIEndpoint + "Site/GetByIdProduct?idProduct=" + this.route.snapshot.params.productId)
       .subscribe(async (response) => {
-        debugger;
+
         this.productData = response;
         this.documents = response?.datasheets;
         this.guides = response?.guides;
