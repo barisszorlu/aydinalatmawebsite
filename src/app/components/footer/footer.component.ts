@@ -7,9 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
- idLanguage : string = '1';
-  
-  constructor(private translate: TranslateService) { 
+  idLanguage: string = '1';
+
+  constructor(private translate: TranslateService) {
     this.idLanguage = localStorage.getItem('idLanguage');
     switch (this.idLanguage) {
       case '1':
@@ -18,7 +18,9 @@ export class FooterComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;

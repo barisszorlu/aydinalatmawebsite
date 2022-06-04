@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
   @Input() product: any;
   brochure: Brochure;
   showBrochure: boolean;
-  idLanguage : string = '1';
+  idLanguage: string = '1';
   constructor(private translate: TranslateService) {
 
     this.idLanguage = localStorage.getItem('idLanguage');
@@ -23,7 +23,9 @@ export class ProductDetailComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
@@ -31,7 +33,7 @@ export class ProductDetailComponent implements OnInit {
 
     if (this.product?.brochureImage != null && this.product?.brochureImage != undefined) {
       this.showBrochure = true;
-    }else{
+    } else {
       this.showBrochure = false;
     }
     // }

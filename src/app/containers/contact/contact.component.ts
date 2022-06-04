@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
 
   user: MailModel = new MailModel();
 
-  idLanguage : string = '1';
+  idLanguage: string = '1';
 
   // user = {
   //   name: '',
@@ -47,6 +47,9 @@ export class ContactComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
+      case '3':
+        this.translate.use('de');
+        break;
 
       default:
         this.translate.use('tr');
@@ -58,11 +61,16 @@ export class ContactComponent implements OnInit {
       this.subjectList.push({ id: 2, name: 'Satın Alma', idLanguage: 1, mails: 'satinalma@3naydinlatma.com.tr' });
       this.subjectList.push({ id: 3, name: 'Dış Ticaret', idLanguage: 1, mails: 'agunes@3naydinlatma.com.tr' });
       this.subjectList.push({ id: 4, name: 'İnsan Kaynakları', idLanguage: 1, mails: 'insankaynaklari@3naydinlatma.com.tr' });
-    }else if (this.idLanguage == '2') {
+    } else if (this.idLanguage == '2') {
       this.subjectList.push({ id: 1, name: 'Sales', idLanguage: 2, mails: ' info@3naydinlatma.com.tr' });
       this.subjectList.push({ id: 2, name: 'Buy', idLanguage: 2, mails: 'satinalma@3naydinlatma.com.tr' });
       this.subjectList.push({ id: 3, name: 'Foreign Trade', idLanguage: 2, mails: 'agunes@3naydinlatma.com.tr' });
       this.subjectList.push({ id: 4, name: 'Human Resources', idLanguage: 2, mails: 'insankaynaklari@3naydinlatma.com.tr' });
+    } else if (this.idLanguage == '3') {
+      this.subjectList.push({ id: 1, name: 'Verkauf', idLanguage: 3, mails: ' info@3naydinlatma.com.tr' });
+      this.subjectList.push({ id: 2, name: 'Besorgen', idLanguage: 3, mails: 'satinalma@3naydinlatma.com.tr' });
+      this.subjectList.push({ id: 3, name: 'Außenhandel', idLanguage: 3, mails: 'agunes@3naydinlatma.com.tr' });
+      this.subjectList.push({ id: 4, name: 'Humanressourcen', idLanguage: 3, mails: 'insankaynaklari@3naydinlatma.com.tr' });
     }
 
   }
@@ -80,7 +88,7 @@ export class ContactComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500
       });
-    }else{
+    } else {
       this.showSendButton = false;
       await this.httpClient.post<boolean>(environment.APIEndpoint + "Site/SendEmail", this.user).subscribe((response) => {
         this.showSendButton = true;
@@ -91,7 +99,7 @@ export class ContactComponent implements OnInit {
             title: 'Mailiniz iletilmiştir, teşekkür ederiz.',
             showConfirmButton: false,
             timer: 1500
-          }).then(x=> window.location.reload())
+          }).then(x => window.location.reload())
         } else {
           Swal.fire({
             icon: 'error',
@@ -110,8 +118,8 @@ export class ContactComponent implements OnInit {
       this.showCv = false;
       this.user.file = null;
     }
-    this.user.sendToMails = this.subjectList.find(x=>x.id?.toString() ==  changeSubject.value).mails;
-    this.user.subject = this.subjectList.find(x=>x.id?.toString() ==  changeSubject.value).name;
+    this.user.sendToMails = this.subjectList.find(x => x.id?.toString() == changeSubject.value).mails;
+    this.user.subject = this.subjectList.find(x => x.id?.toString() == changeSubject.value).name;
   }
 
   FileChange(evt: any) {

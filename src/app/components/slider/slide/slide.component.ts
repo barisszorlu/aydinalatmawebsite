@@ -16,7 +16,7 @@ export class SlideComponent implements OnInit {
 
   constructor(private translate: TranslateService) {
     var idLanguage = localStorage.getItem('idLanguage');
-    
+
     switch (idLanguage?.toString()) {
       case '1':
         this.translate.use('tr');
@@ -24,13 +24,15 @@ export class SlideComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
     }
 
-   }
+  }
 
   ngOnInit(): void {
   }

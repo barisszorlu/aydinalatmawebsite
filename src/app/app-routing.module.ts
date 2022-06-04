@@ -12,14 +12,14 @@ import { ReferencesComponent } from './containers/references/references.componen
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'urun-grubu/:productTypeName  /:productName/:productId',
+    path: 'product-group/:productTypeName  /:productName/:productId',
     component: ProductComponent,
   },
-  { path: 'urun-grubu/:id', component: ProductTypeComponent },
-  { path: 'iletisim', component: ContactComponent },
-  { path: 'hakkimizda', component: AboutComponent },
-  { path: 'kariyer', component: CareerComponent },
-  { path: 'referanslar', component: ReferencesComponent },
+  { path: 'product-group/:id', component: ProductTypeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'aboutus', component: AboutComponent },
+  { path: 'career', component: CareerComponent },
+  { path: 'references', component: ReferencesComponent },
   { path: 'sertifikalar', component: CertificatesComponent },
 
 

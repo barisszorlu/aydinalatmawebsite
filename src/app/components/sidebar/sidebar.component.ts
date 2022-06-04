@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 
-declare var $:any;
+declare var $: any;
 
 
 
@@ -64,7 +64,7 @@ interface ExampleFlatNode {
 
 export class SidebarComponent implements OnInit, AfterViewInit {
 
- private _transformer = (node: FoodNode, level: number) => {
+  private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -74,10 +74,10 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   treeControl = new FlatTreeControl<ExampleFlatNode>(
-      node => node.level, node => node.expandable);
+    node => node.level, node => node.expandable);
 
   treeFlattener = new MatTreeFlattener(
-      this._transformer, node => node.level, node => node.expandable, node => node.children);
+    this._transformer, node => node.level, node => node.expandable, node => node.children);
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
@@ -85,13 +85,13 @@ export class SidebarComponent implements OnInit, AfterViewInit {
 
 
 
-  @ViewChild('tree') tree:ElementRef;
+  @ViewChild('tree') tree: ElementRef;
   @ViewChild('treeValues') treeValues: ElementRef;
 
-  public div : string;
-  public categories : Array<any>;
-  public subCategories : Array<any>;
-  constructor(private httpClient:HttpClient,private router: Router,private translate: TranslateService) {
+  public div: string;
+  public categories: Array<any>;
+  public subCategories: Array<any>;
+  constructor(private httpClient: HttpClient, private router: Router, private translate: TranslateService) {
     var idLanguage = localStorage.getItem('idLanguage');
     switch (idLanguage?.toString()) {
       case '1':
@@ -100,7 +100,9 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
@@ -109,7 +111,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (idLanguage == '0' || idLanguage == undefined || idLanguage == null || idLanguage == 'undefined') {
       idLanguage = '1'
     }
-    this.httpClient.get<any>(environment.APIEndpoint + "Site/GetTree?idLanguage="+ idLanguage).subscribe((response) => {
+    this.httpClient.get<any>(environment.APIEndpoint + "Site/GetTree?idLanguage=" + idLanguage).subscribe((response) => {
       response.forEach(element => {
         var tmpSubCategories = new Array<FoodNode>()
         TREE_DATA.push({
@@ -122,7 +124,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       this.dataSource.data = TREE_DATA;
     })
 
-   }
+  }
   ngAfterViewInit() {
     $('#treeValues').html();
     console.log(this.treeValues.nativeElement.innerHTML);
@@ -132,7 +134,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  getChildren(element : any){
+  getChildren(element: any) {
     var tmpSubCategories = new Array<FoodNode>()
     element.subCategories?.forEach(element2 => {
       var tmp = new FoodNode();
@@ -146,24 +148,24 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         tmp2.name = element3.name;
         tmp.children.push(tmp2);
       });
-      
 
 
 
-  })
-  return tmpSubCategories;
-}
+
+    })
+    return tmpSubCategories;
+  }
 
 
-// GoProductGroupPage(node : any){
-// if (node.level == 2) {
+  // GoProductGroupPage(node : any){
+  // if (node.level == 2) {
 
-//   this.router.navigate(['/show_alunos'])
-// }
-//  
-// }
+  //   this.router.navigate(['/show_alunos'])
+  // }
+  //  
+  // }
 
- 
+
 
   // GetSubCategories(idCategory: number){
   //   this.httpClient.get<any>(environment.APIEndpoint + "Site/GetSubCategories?idCategory="+idCategory).subscribe((response) => {

@@ -28,7 +28,9 @@ export class ProductSlideComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
@@ -36,39 +38,39 @@ export class ProductSlideComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     
+
     this.imageSrc = this.product.previewImage;
     this.category = this.productTypeName;
     this.name = this.product.productName;
-    this.categoryHref = '/urun-grubu/' + this.route.snapshot.params.id;
+    this.categoryHref = '/product-group/' + this.route.snapshot.params.id;
 
-    this.productHref ='urun-grubu/' + this.productTypeName.replace(/Ü/gim, "u")
-		.replace(/Ş/gim, "s")
-		.replace(/I/gim, "i")
-		.replace(/İ/gim, "i")
-		.replace(/Ö/gim, "o")
-		.replace(/Ç/gim, "c")
-		.replace(/ğ/gim, "g")
-		.replace(/ü/gim, "u")
-		.replace(/ş/gim, "s")
-		.replace(/ı/gim, "i")
-		.replace(/ö/gim, "o")
-		.replace(/ç/gim, "c")
-    .replace(/ /gim, "-").toLowerCase( )+'/' +this.product.productName.replace(/Ğ/gim, "g")
-		.replace(/Ü/gim, "u")
-		.replace(/Ş/gim, "s")
-		.replace(/I/gim, "i")
-		.replace(/İ/gim, "i")
-		.replace(/Ö/gim, "o")
-		.replace(/Ç/gim, "c")
-		.replace(/ğ/gim, "g")
-		.replace(/ü/gim, "u")
-		.replace(/ş/gim, "s")
-		.replace(/ı/gim, "i")
-		.replace(/ö/gim, "o")
-		.replace(/ç/gim, "c")
-    .replace(/ /gim, "-").toLowerCase( )
+    this.productHref = 'product-group/' + this.productTypeName.replace(/Ü/gim, "u")
+      .replace(/Ş/gim, "s")
+      .replace(/I/gim, "i")
+      .replace(/İ/gim, "i")
+      .replace(/Ö/gim, "o")
+      .replace(/Ç/gim, "c")
+      .replace(/ğ/gim, "g")
+      .replace(/ü/gim, "u")
+      .replace(/ş/gim, "s")
+      .replace(/ı/gim, "i")
+      .replace(/ö/gim, "o")
+      .replace(/ç/gim, "c")
+      .replace(/ /gim, "-").toLowerCase() + '/' + this.product.productName.replace(/Ğ/gim, "g")
+        .replace(/Ü/gim, "u")
+        .replace(/Ş/gim, "s")
+        .replace(/I/gim, "i")
+        .replace(/İ/gim, "i")
+        .replace(/Ö/gim, "o")
+        .replace(/Ç/gim, "c")
+        .replace(/ğ/gim, "g")
+        .replace(/ü/gim, "u")
+        .replace(/ş/gim, "s")
+        .replace(/ı/gim, "i")
+        .replace(/ö/gim, "o")
+        .replace(/ç/gim, "c")
+        .replace(/ /gim, "-").toLowerCase()
 
-    + '/' + this.product.idProduct;
+      + '/' + this.product.idProduct;
   }
 }

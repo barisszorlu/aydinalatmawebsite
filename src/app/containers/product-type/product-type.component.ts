@@ -22,7 +22,7 @@ export class ProductTypeComponent implements OnInit {
   products: any;
   safeBannerVideoSrc: SafeResourceUrl;
   showVideo: boolean = true;
-  idLanguage : string = '1';
+  idLanguage: string = '1';
 
   constructor(
     private readonly router: Router,
@@ -42,7 +42,9 @@ export class ProductTypeComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
@@ -51,31 +53,31 @@ export class ProductTypeComponent implements OnInit {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        if (event.url.includes('urun-grubu')) {
+        if (event.url.includes('product-group')) {
           this.closeSidebar();
         }
       });
 
     var groupNumber = this.route.snapshot.params.id;
     if (groupNumber > 0) {
-      this.httpClient.get<any>(environment.APIEndpoint + "Site/GetGroup?idGroup="+groupNumber).subscribe((response) => {
+      this.httpClient.get<any>(environment.APIEndpoint + "Site/GetGroup?idGroup=" + groupNumber).subscribe((response) => {
         this.productTypeName = response.name;
         this.productTypeDescription = response.desc;
-         
+
         if (!response.youtubeLink.includes('youtube')) {
           this.showVideo = false;
         }
         this.videoSrc = response.youtubeLink;
         var videoId = this.videoSrc.slice(this.videoSrc.lastIndexOf('watch?v='));
-        this.videoSrc.substr(0, this.videoSrc.indexOf('watch?v=')); 
-        this.videoSrc = response.youtubeLink?.replace('watch?v=','embed/');
-        videoId = videoId.replace('watch?v=','')
-        this.safeBannerVideoSrc = this.domSanitizer.bypassSecurityTrustResourceUrl(this.videoSrc + '?autoplay=1&rel=0&loop=1&playlist='+ videoId);
+        this.videoSrc.substr(0, this.videoSrc.indexOf('watch?v='));
+        this.videoSrc = response.youtubeLink?.replace('watch?v=', 'embed/');
+        videoId = videoId.replace('watch?v=', '')
+        this.safeBannerVideoSrc = this.domSanitizer.bypassSecurityTrustResourceUrl(this.videoSrc + '?autoplay=1&rel=0&loop=1&playlist=' + videoId);
         this.products = response.products;
-         
+
       });
-    }  
-      
+    }
+
   }
 
   ngOnInit(): void {
@@ -100,7 +102,7 @@ export class ProductTypeComponent implements OnInit {
       data: { src: this.videoSrc },
     });
 
-    dialogRef.afterClosed().subscribe(() => {});
+    dialogRef.afterClosed().subscribe(() => { });
   }
 
   private closeSidebar(): void {

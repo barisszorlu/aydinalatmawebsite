@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private readonly router: Router, private translate: TranslateService) {
     var lsIdl = localStorage.getItem('idLanguage');
-    if ( lsIdl != null ) {
+    if (lsIdl != null) {
       this.idLanguage = lsIdl;
     }
 
@@ -49,7 +49,9 @@ export class HeaderComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
-
+      case '3':
+        this.translate.use('de');
+        break;
       default:
         this.translate.use('tr');
         break;
@@ -92,12 +94,12 @@ export class HeaderComponent implements OnInit {
   private isWhitePage(url: string) {
     return (
       url.includes('product') ||
-      url.includes('iletisim') ||
-      url.includes('hakkimizda') ||
-      url.includes('kariyer') ||
-      url.includes('referanslar') ||
-      url.includes('sertifikalar') || 
-      url.includes('urun-grubu')
+      url.includes('contact') ||
+      url.includes('aboutus') ||
+      url.includes('career') ||
+      url.includes('references') ||
+      url.includes('sertifikalar') ||
+      url.includes('product-group')
     );
   }
 }

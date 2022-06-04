@@ -18,7 +18,7 @@
                     'app-black': isHeaderTextBlack,
                     'app-white': !isHeaderTextBlack
                   }"
-                  href="/iletisim"
+                  href="/contact"
                   >{{ 'UPPER_CONTRACT' | translate }}</a
                 >
               </li>
@@ -47,6 +47,18 @@
                     class="dropdown-image"
                   />EN
                 </a>
+                <a *ngIf="idLanguage == '3'"
+                [ngClass]="{
+                  'app-black': isHeaderTextBlack,
+                  'app-white': !isHeaderTextBlack
+                }"
+              >
+                <img 
+                  src="assets/images/flags/deu.png"
+                  alt="DEU"
+                  class="dropdown-image"
+                />DEU
+              </a>
                 <ul class="app-language-menu">
                   <li (click)="changeLanguage(2)" style="cursor: pointer;">
                     <a
@@ -77,6 +89,21 @@
                         alt="TR"
                         class="dropdown-image"
                       />TR
+                    </a>
+                  </li>
+                  <li (click)="changeLanguage(3)" style="cursor: pointer;">
+                    <a
+                      class="app-custom app-sublink"
+                      [ngClass]="{
+                        'app-black': isHeaderTextBlack,
+                        'app-white': !isHeaderTextBlack
+                      }"
+                    >
+                      <img
+                        src="assets/images/flags/deu.png"
+                        alt="DEU"
+                        class="dropdown-image"
+                      />DEU
                     </a>
                   </li>
                 </ul>

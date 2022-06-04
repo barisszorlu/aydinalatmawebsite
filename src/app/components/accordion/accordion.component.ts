@@ -9,9 +9,9 @@ import { Accordion } from '../../models/accordion.model';
 })
 export class AccordionComponent implements OnInit {
   @Input() contents: Accordion[];
-  idLanguage : string = '1';
-  
-  constructor(private translate: TranslateService) { 
+  idLanguage: string = '1';
+
+  constructor(private translate: TranslateService) {
     this.idLanguage = localStorage.getItem('idLanguage');
     switch (this.idLanguage) {
       case '1':
@@ -20,6 +20,9 @@ export class AccordionComponent implements OnInit {
       case '2':
         this.translate.use('en');
         break;
+      case '3':
+        this.translate.use('de');
+        break;
 
       default:
         this.translate.use('tr');
@@ -27,5 +30,5 @@ export class AccordionComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
